@@ -6,7 +6,5 @@ jobs:
     env:
       PASSWORD: SuperSecret123
     steps:
-      - run: echo "::add-mask::${{ env.PASSWORD }}"
       - run: echo "${{ env.PASSWORD }}"
-      - run: echo "::add-mask::${PASSWORD}"
       - run: echo "${PASSWORD}"
