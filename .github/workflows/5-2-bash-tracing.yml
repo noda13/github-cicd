@@ -1,0 +1,13 @@
+name: Bash Tracing
+on: push
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          set -x
+          echo "This is the first line of the debug log."
+          date
+          hostname
+          echo "This is the last line of the debug log."
+          set +x
