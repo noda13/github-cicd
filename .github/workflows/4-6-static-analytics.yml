@@ -15,4 +15,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: | # 静的解析の実行
-          docker run --rm -v "$(pwd):/app -w /app rhysd/actionlint:latest
+          docker run --rm -v "$(pwd):/app" -w /app rhysd/actionlint:latest
