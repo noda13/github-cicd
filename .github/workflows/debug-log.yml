@@ -1,0 +1,7 @@
+name: Debug Log
+on: push
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "::debug::This is the last line of the debug log."
