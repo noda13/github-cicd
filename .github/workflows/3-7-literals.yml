@@ -16,5 +16,4 @@ jobs:
           LITERAL_STRING2: ${{ 'Hello, World!' }}
           LITERAL_NUMBER2: ${{ 42 }}
           LITERAL_BOOLEAN2: ${{ true }}
-          LITERAL_ARRAY2: ${{ [1, 2, 3] }}
           LITERAL_NULL2: ${{ null }}
