@@ -1,0 +1,14 @@
+# GitHub APIを実行するワークフロー
+name: Comment
+on: push
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write  # プルリクエストの書き込み
+      contents: read # ソースの読み込み
+    steps:
+      - uses: actions/checkout@v4
+      - run: gh pr comment "${GITHUB_HEAD_REF}" --body "Hello", ${GITHUB_ACTOR}!"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub APIを実行するためのトークン
