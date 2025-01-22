@@ -7,13 +7,8 @@ jobs:
     steps:
       - run: printenv | grep 'LITERAL_'
         env:
-          LITERAL_STRING: 'Hello, World!'
-          LITERAL_NUMBER: 42
-          LITERAL_BOOLEAN: true
-          LITERAL_ARRAY: '[1, 2, 3]'
-          LITERAL_OBJECT: '{"key": "value"}'
-          LITERAL_NULL: 'null'
-          LITERAL_STRING2: ${{ 'Hello, World!' }}
-          LITERAL_NUMBER2: ${{ 42 }}
-          LITERAL_BOOLEAN2: ${{ true }}
-          LITERAL_NULL2: ${{ null }}
+          LITERAL_OMIT_STRING: 'Hello, World!'
+          LITERAL_STRING: ${{ 'Hello, World!' }}
+          LITERAL_NUMBER: ${{ 42 }}
+          LITERAL_BOOLEAN: ${{ true }}
+          LITERAL_NULL: ${{ null }}
