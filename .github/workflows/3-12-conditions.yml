@@ -1,0 +1,9 @@
+# 条件分岐
+name: Conditions
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello"
+        if: ${{ contains(github.run_id, '1') }}
