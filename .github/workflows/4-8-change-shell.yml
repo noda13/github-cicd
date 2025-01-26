@@ -1,0 +1,15 @@
+# ステップごとにシェルを指定
+name: Change Shell
+on:
+  push:
+jobs:
+  sleep:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: echo "${SHELL}"
+      - shell: python
+        run : |
+          import os
+          print(os.getenv('SHELL'))
+          print(os.environ['PATH'])

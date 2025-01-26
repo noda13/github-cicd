@@ -1,0 +1,10 @@
+# タイムアウト
+name: Timeout
+on:
+  push:
+jobs:
+  sleep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1  # タイムアウト
+    steps:
+      - run: sleep 120
