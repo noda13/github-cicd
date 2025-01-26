@@ -17,4 +17,5 @@ jobs:
     steps:
       - run: echo "${USERNAME}"
       - run: echo "${PASSOWRD:0:1} ${PASSWORD#?}"
+      - run: echo "${PASSOWRD:0:1} ${PASSWORD#?}"
 
