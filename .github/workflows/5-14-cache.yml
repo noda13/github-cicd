@@ -9,7 +9,7 @@ jobs:
       - uses: actions/cache@v4
         with:
           key: test-${{ runner.os }}-${{ github.sha }}
-          path: ${{ runner.workspace }}/dummy
+          path: ${{ github.workspace }}/dummy
           restore-keys: |
             test-${{ runner.os }}-
       - run: |
