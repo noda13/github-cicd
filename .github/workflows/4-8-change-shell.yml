@@ -3,7 +3,7 @@ name: Change Shell
 on:
   push:
 jobs:
-  sleep:
+  print:
     runs-on: ubuntu-latest
     steps:
       - shell: bash
@@ -11,5 +11,4 @@ jobs:
       - shell: python
         run : |
           import os
-          print(os.getenv('SHELL'))
           print(os.environ['PATH'])
