@@ -1,3 +1,4 @@
+# 静的解析ワークフロー
 name: Static Analysis
 on:
   pull_request:
