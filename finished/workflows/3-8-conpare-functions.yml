@@ -1,0 +1,12 @@
+# 文字列比較の関数
+name: Compare Functions
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: printenv | grep '_FUNC'
+        env:
+          CONTAINTS_FUNC: ${{ contains('Hello, World!', 'llo') }}
+          STARTS_WITH_FUNC: ${{ startsWith('Hello, World!', 'Hel') }}
+          ENDS_WITH_FUNC: ${{ endsWith('Hello, World!', 'ld!') }}

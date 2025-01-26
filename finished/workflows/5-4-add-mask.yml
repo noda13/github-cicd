@@ -1,0 +1,10 @@
+name: Add Mask
+on: push
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    env:
+      PASSWORD: SuperSecret123
+    steps:
+      - run: echo "${{ env.PASSWORD }}"
+      - run: echo "${PASSWORD}"

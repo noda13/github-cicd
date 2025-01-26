@@ -1,0 +1,9 @@
+# 多重機動の抑制
+name: Concurrency
+on: push
+concurrency: ${{ github.workflow }}
+jobs:
+  sleep:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 120

@@ -1,0 +1,10 @@
+# JSON操作の関数
+name: JSON Functions
+on: push
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${CONTEXT}"
+        env:
+          CONTEXT: ${{ toJSON(github) }}

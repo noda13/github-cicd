@@ -1,0 +1,17 @@
+name: Share Job Data
+on: push
+jobs:
+  before:
+    runs-on: ubuntu-latest
+    steps:
+      - id: generate # Step ID
+        run: echo "result=Hello" >> "${GITHUB_OUTPUT}"  # Step output
+    outputs:
+      result: ${{ steps.generate.outputs.result }}  # Job output
+  after:
+    runs-on: ubuntu-latest
+    needs: [before] # Job dependency
+    steps:
+      - env:
+          RESULT: ${{ needs.before.outputs.result }}  # 依存ジョブの出力値を参照
+        run: echo "${RESULT}"
