@@ -38,3 +38,8 @@ gh pr merge --merge
 ```
 
 gh release create v0.2.0 --title "v0.2.0" --generate-notes
+
+### タグを作成してプッシュ
+
+git tag v0.3.0
+git push origin v0.3.0
