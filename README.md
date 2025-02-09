@@ -43,3 +43,39 @@ gh release create v0.2.0 --title "v0.2.0" --generate-notes
 
 git tag v0.3.0
 git push origin v0.3.0
+
+### コンテナイメージの命名規則とビルド
+
+ghcr.io/<名前空間>/<イメージ名>:<イメージタグ>
+
+- 個人アカウント名を環境変数にセット（container Registryへのログインなどで利用）
+gh auth login
+
+export GHCR_USER=$(gh config get -h github.com user)
+
+- ビルド
+docker build -t ghcr.io/${GHCR_USER}/example:latest docker/example/
+
+### Container Registryへのログインとプッシュ
+
+- GitHub CLIのクレデンシャルでGitHub Packagesへのアクセス権限追加
+gh auth refresh --scopes write:packages
+
+- login
+gh auth token | docker login ghcr.io -u ${GHCR_USER} --password-stdin
+
+- コンテナイメージをプッシュ
+docker push ghcr.io/${GHCR_USER}/example:latest
+
+- コンテナイメージのプル
+docker pull ghcr.io/${GHCR_USER}/example:latest
+
+### パッケージの自動リンクとパーミッションの継承
+
+- 自動リンク
+docker build -t ghcr.io/${GHCR_USER}/auto-link:latest \
+--label "org.opencontainers.image.source=https://github.om/${GHCR_USER}/github-cicd
+" \
+docker/example/
+
+docker push ghcr.io/${GHCR_USER}/auto-link:latest
