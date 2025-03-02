@@ -8,4 +8,4 @@ jobs:
       - uses: actions/checkout@v4
       - run: echo "${HASH}"
         env:
-          HASH: ${{ hashFiles('.github/workflows/*.yml') }}
+          HASH: ${{ hashFiles('.github/workflows/*.yml') }} # ハッシュ地の生成

@@ -1,12 +1,13 @@
+# 環境変数のオーバーライド
 name: Override Environment Variables
 on: push
+env:
+  EXAMPLE: Defined by workflow level  # ワークフローレベル環境変数の定義
 jobs:
   print:
     runs-on: ubuntu-latest
-    env:
-      EXAMPLE: Defined by workflow level
     steps:
-      - run: echo "${EXAMPLE}"
+      - run: echo "${EXAMPLE}"  # ワークフローレベル環境変数の参照
       - env:
-          EXAMPLE: Defined by step level
-        run: echo "${EXAMPLE}"
+          EXAMPLE: Defined by step level  # ステップレベル環境変数のオーバーライド
+        run: echo "${EXAMPLE}"  # オーバーライドされたステップレベル環境変数の参照

@@ -5,8 +5,8 @@ jobs:
   share:
     runs-on: ubuntu-latest
     steps:
-      - id: source
-        run: echo "result=Hello" >> "${GITHUB_OUTPUT}"
+      - id: source  # ステップIDを指定
+        run: echo "result=Hello" >> "${GITHUB_OUTPUT}"  # 結果をGITHUB_OUTPUT環境変数に出力
       - env:
-          RESULT: ${{ steps.source.outputs.result }}
+          RESULT: ${{ steps.source.outputs.result }}  # stepコンテキストから参照
         run: echo "${RESULT}"

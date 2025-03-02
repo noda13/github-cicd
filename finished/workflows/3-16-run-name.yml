@@ -1,6 +1,6 @@
 # ワークフロー実行名
 name: Run name
-run-name: Run by @${{ github.actor }}
+run-name: Run by @${{ github.actor }} # ワークフロー実行名を指定
 on: push
 jobs:
   print:

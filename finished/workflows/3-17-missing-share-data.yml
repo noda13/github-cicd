@@ -5,5 +5,5 @@ jobs:
   share:
     runs-on: ubuntu-latest
     steps:
-      - run: export RESULT="Hello"
-      - run: echo "${RESULT}"
+      - run: export RESULT="Hello"  # 環境変数を設定
+      - run: echo "${RESULT}" # 環境変数は引き継がれないため空文字になる

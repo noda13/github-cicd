@@ -1,8 +1,8 @@
-name: Hello
-on: push
-jobs:
-  hello:
-    runs-on: ubuntu-latest
-    steps:
-    - run: echo Hello, world!
-    - uses: actions/checkout@v4
+name: Hello # ワークフロー名
+on: push  # ワークフローのトリガー条件
+jobs: # ジョブの定義
+  hello:  # ジョブ名
+    runs-on: ubuntu-latest  # ジョブが実行されるランナーの環境
+    steps:  # ジョブの手順
+    - run: echo Hello, world! # コマンドの実行
+    - uses: actions/checkout@v4 # GitHub Actions のアクションの利用

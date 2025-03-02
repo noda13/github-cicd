@@ -1,7 +1,7 @@
 name: Schedule
 on:
-  schedule:
-    - cron: '*/15 * * * *'
+  schedule: # スケジュールトリガー
+    - cron: '*/15 * * * *'  # cron 式　15分ごとに実行
 jobs:
   run:
     runs-on: ubuntu-latest
