@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello"
-        if: ${{ contains(github.run_id, '1') }}
+        if: ${{ contains(github.run_id, '1') }} # run_idが'1'を含む場合のみ実行

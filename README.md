@@ -1,4 +1,10 @@
-# github-cicd
+# GitHub CI/CD
+
+## [サンプルコード](https://github.com/tmknom/example-github-cicd)
+
+## [環境構築](./docs/01-環境構築.md)
+
+
 
 ### cache key に、ファイルキャッシュを指定
 

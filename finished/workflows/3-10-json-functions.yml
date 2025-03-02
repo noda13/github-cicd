@@ -7,4 +7,4 @@ jobs:
     steps:
       - run: echo "${CONTEXT}"
         env:
-          CONTEXT: ${{ toJSON(github) }}
+          CONTEXT: ${{ toJSON(github) }}  # githubコンテキストをJSON文字列でダンプ

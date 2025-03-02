@@ -8,3 +8,8 @@ jobs:
       - run: exit 1
       - run: echo "Hello"
         if: ${{ failure() }}
+# ステータスチェック関数
+# - success() 手前の処理が成功したらtrue
+# - failure() 手前の処理が失敗したらtrue
+# - cancelled() 手前の処理がキャンセルされたらtrue
+# - always()  手前の処理結果を問わず常にtrue

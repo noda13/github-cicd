@@ -4,7 +4,7 @@ on: push
 jobs:
   comment:
     runs-on: ubuntu-latest
-    permissions:
+    permissions:  # GITHUB_TOKENのパーミッションを設定
       pull-requests: write  # プルリクエストの書き込み
       contents: read # ソースの読み込み
     steps:
